@@ -5,7 +5,7 @@ import "./Shop.css";
 
 const Shop = () => {
   return (
-    <div>
+    <div className="pt-5">
       <Container>
         <Row className="g-3">
           <Col md={9}>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Row } from "react-bootstrap";
 import Product from "../Product/Product";
 import "./Products.css";
 
@@ -12,9 +13,11 @@ const Products = () => {
 
   return (
     <div>
-      {products.map((product) => (
-        <Product key={product.id} product={product}></Product>
-      ))}
+      <Row md={3} className="g-4">
+        {products.map((product) => (
+          <Product key={product.id} product={product}></Product>
+        ))}
+      </Row>
     </div>
   );
 };
