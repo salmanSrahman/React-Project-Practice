@@ -5,7 +5,6 @@ const Cart = ({ cart }) => {
   let subPrice = 0;
   let shipping = 0;
   for (const product of cart) {
-    console.log(product);
     subPrice = product.price + subPrice;
     shipping = product.shipping + shipping;
   }
