@@ -1,0 +1,9 @@
+.header-nav {
+      background: #000;
+}
+
+.header-nav .nav-link {
+      color: #fff !important;
+      font-weight: bold !important;
+      padding: 0 1.5rem !important;
+}
