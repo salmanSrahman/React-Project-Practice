@@ -14,13 +14,13 @@ const Shop = () => {
   return (
     <div className={`${style.shop__container}`}>
       <Container>
-        <Row>
+        <Row className="g-3">
           <Col>
-             <Row>
-               {
-                 products.map(product => <Product product={product}></Product>)
-               }
-             </Row>
+            <Row md={2} className="g-3">
+              {products.map((product) => (
+                <Product product={product}></Product>
+              ))}
+            </Row>
           </Col>
           <Col></Col>
         </Row>
