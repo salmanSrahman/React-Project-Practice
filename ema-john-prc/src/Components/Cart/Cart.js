@@ -15,10 +15,10 @@ const Cart = ({ cart }) => {
     <div className={`${style.cart__container}`}>
       <h3>Order Summary</h3>
       <h5>Selected Items: {cart.length}</h5>
-      <h5>Total Price: ${subPrice}</h5>
-      <h5>Shipping: ${shipping}</h5>
-      <h5>Tax: ${tax}</h5>
-      <h4>Grand Total: ${grandTotal}</h4>
+      <h5>Total Price: ${subPrice.toFixed(2)}</h5>
+      <h5>Shipping: ${shipping.toFixed(2)}</h5>
+      <h5>Tax: ${tax.toFixed(2)}</h5>
+      <h4>Grand Total: ${grandTotal.toFixed(2)}</h4>
     </div>
   );
 };
