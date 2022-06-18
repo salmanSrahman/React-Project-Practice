@@ -1,9 +1,15 @@
 import React from "react";
+import { Row } from "react-bootstrap";
+import Item from "../Item/Item";
 
-const MenuItem = () => {
+const MenuItem = ({ items }) => {
   return (
     <div>
-      <h1>Menu Items Here.</h1>
+      <Row md={3} className="g-3">
+        {items.map((item) => (
+          <Item item={item}></Item>
+        ))}
+      </Row>
     </div>
   );
 };
