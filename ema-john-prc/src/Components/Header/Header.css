@@ -2,8 +2,9 @@
       background: #000;
 }
 
-.header-nav .nav-link {
-      color: #fff !important;
+.header-nav a {
+      text-decoration: none;
       font-weight: bold !important;
       padding: 0 1.5rem !important;
+      font-size: 1.1rem;
 }
