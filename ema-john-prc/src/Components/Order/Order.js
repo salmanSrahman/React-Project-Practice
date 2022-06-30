@@ -3,10 +3,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import useCart from "../../Hooks/useCart";
 import useProducts from "../../Hooks/useProducts";
 import Cart from "../Cart/Cart";
+import ReviewItem from "../ReviewItem/ReviewItem";
 
 const Order = () => {
   const [products] = useProducts();
   const [cart] = useCart(products);
+  console.log(cart);
 
   return (
     <div>
