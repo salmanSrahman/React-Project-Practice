@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col } from "react-bootstrap";
-import addToDb from "../../Utilities/fakeDb";
+import { addToDb } from "../../Utilities/fakeDb";
+
 import "./Product.css";
 
 const Product = ({ product }) => {
