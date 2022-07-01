@@ -1,7 +1,7 @@
 import React from 'react';
-import './Product.css'
+import './Inventory.css'
 
-const Product = () => {
+const Inventory = () => {
       return (
             <div>
                   
@@ -9,4 +9,4 @@ const Product = () => {
       );
 };
 
-export default Product;
+export default Inventory;

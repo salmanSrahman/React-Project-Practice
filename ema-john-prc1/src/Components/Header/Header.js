@@ -1,7 +1,7 @@
 import React from 'react';
-import './Product.css'
+import './Header.css'
 
-const Product = () => {
+const Header = () => {
       return (
             <div>
                   
@@ -9,4 +9,4 @@ const Product = () => {
       );
 };
 
-export default Product;
+export default Header;
