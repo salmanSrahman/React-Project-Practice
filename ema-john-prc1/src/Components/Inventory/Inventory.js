@@ -1,12 +1,12 @@
-import React from 'react';
-import './Inventory.css'
+import React from "react";
+import "./Inventory.css";
 
 const Inventory = () => {
-      return (
-            <div>
-                  
-            </div>
-      );
+  return (
+    <div>
+      <h1>Manage inventory.</h1>
+    </div>
+  );
 };
 
 export default Inventory;

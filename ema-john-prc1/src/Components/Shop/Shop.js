@@ -15,11 +15,13 @@ const Shop = () => {
       <Container>
         <Row className="g-3">
           <Col md={9}>
-            <Row md={3}>
-              {products.map((product) => (
-                <Product key={product.id} product={product}></Product>
-              ))}
-            </Row>
+            <div className="py-4">
+              <Row md={3} className="g-3">
+                {products.map((product) => (
+                  <Product key={product.id} product={product}></Product>
+                ))}
+              </Row>
+            </div>
           </Col>
           <Col md={3}>
             <h1>Cart</h1>
