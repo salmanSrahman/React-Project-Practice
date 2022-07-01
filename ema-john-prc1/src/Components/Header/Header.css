@@ -1,0 +1,9 @@
+.Header__container {
+      background: #000;
+}
+
+.Nav__container a {
+      padding: 0 1rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+}
