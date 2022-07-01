@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    const newCart = [...cart, product];
+    setCart(newCart);
+  };
+
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
@@ -18,13 +26,17 @@ const Shop = () => {
             <div className="py-4">
               <Row md={3} className="g-3">
                 {products.map((product) => (
-                  <Product key={product.id} product={product}></Product>
+                  <Product
+                    key={product.id}
+                    product={product}
+                    addToCart={addToCart}
+                  ></Product>
                 ))}
               </Row>
             </div>
           </Col>
           <Col md={3}>
-            <h1>Cart</h1>
+            <Cart cart={cart}></Cart>
           </Col>
         </Row>
       </Container>

@@ -1,0 +1,6 @@
+.cart__container {
+      background: rgb(238, 219, 182);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+}

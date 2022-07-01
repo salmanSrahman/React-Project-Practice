@@ -2,8 +2,7 @@ import React from "react";
 import { Button, Col } from "react-bootstrap";
 import "./Product.css";
 
-const Product = ({ product }) => {
-  console.log(product);
+const Product = ({ product, addToCart }) => {
   const { img, name, price, seller, stock } = product;
   return (
     <Col>
@@ -16,7 +15,7 @@ const Product = ({ product }) => {
           Only <span className="text-danger fw-bold">{stock}</span> left in
           stock - order soon
         </h5>
-        <Button className="d-block w-100 my-1">Add To Cart</Button>
+        <Button className="d-block w-100 my-1" onClick={()=>addToCart(product)}>Add To Cart</Button>
       </div>
     </Col>
   );
