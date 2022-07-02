@@ -1,0 +1,10 @@
+.review__container {
+      width: 571px;
+      border: 2px solid red;
+}
+
+.review__container img {
+      width: 91px;
+      height: 91px;
+      border-radius: 6px;
+}
