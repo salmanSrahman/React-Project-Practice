@@ -8,7 +8,12 @@ import "./Order.css";
 
 const Order = () => {
   const [products] = useProducts();
-  const [cart] = useCart(products);
+  const [cart, setCart] = useCart(products);
+
+  const handleRemoveFromCart = (product) => {
+    const rest = cart.filter((pd) => pd.id !== product.id);
+    setCart(rest);
+  };
 
   return (
     <div>
@@ -18,7 +23,10 @@ const Order = () => {
             <div className="d-flex justify-content-center">
               <div>
                 {cart.map((product) => (
-                  <ReviewItem product={product}></ReviewItem>
+                  <ReviewItem
+                    product={product}
+                    handleRemoveFromCart={handleRemoveFromCart}
+                  ></ReviewItem>
                 ))}
               </div>
             </div>

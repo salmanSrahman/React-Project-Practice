@@ -10,3 +10,14 @@
       height: 91px;
       border-radius: 6px;
 }
+
+.delete__icon {
+      background: #EB5757;
+      width: 38px;
+      height: 38px;
+      text-align: center;
+      border-radius: 50%;
+      padding: 8px;
+      color: #fff;
+      cursor: pointer;
+}
