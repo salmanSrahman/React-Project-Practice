@@ -2,3 +2,8 @@
       padding: 5px;
       border: 1px solid gray;
 }
+
+.product__ratings {
+      color: goldenrod;
+      font-size: .6rem;
+}
