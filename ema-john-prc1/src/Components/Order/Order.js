@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import useCart from "../../Hooks/useCart";
 import useProducts from "../../Hooks/useProducts";
+import { removeFromDb } from "../../Utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
@@ -13,6 +14,7 @@ const Order = () => {
   const handleRemoveFromCart = (product) => {
     const rest = cart.filter((pd) => pd.id !== product.id);
     setCart(rest);
+    removeFromDb(product.id);
   };
 
   return (
