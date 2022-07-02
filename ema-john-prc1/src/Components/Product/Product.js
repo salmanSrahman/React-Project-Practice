@@ -5,7 +5,6 @@ import "./Product.css";
 
 const Product = ({ product, addToCart }) => {
   const { img, name, price, seller, stock, ratings } = product;
-  console.log(product);
   return (
     <Col>
       <div className="Product__details">
@@ -17,7 +16,8 @@ const Product = ({ product, addToCart }) => {
           Only <span className="text-danger fw-bold">{stock}</span> left in
           stock - order soon
         </h5>
-        <Rating className="product__ratings"
+        <Rating
+          className="product__ratings"
           initialRating={ratings}
           emptySymbol="fa fa-star-o fa-2x"
           fullSymbol="fa fa-star fa-2x"
