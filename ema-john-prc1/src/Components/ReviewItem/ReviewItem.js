@@ -1,6 +1,5 @@
 import React from "react";
 import "./ReviewItem.css";
-
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 const ReviewItem = ({ product, handleRemoveFromCart }) => {

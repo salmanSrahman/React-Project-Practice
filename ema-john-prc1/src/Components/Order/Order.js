@@ -17,6 +17,11 @@ const Order = () => {
     removeFromDb(product.id);
   };
 
+  const clearCart = () => {
+    console.log("Hello");
+    setCart([]);
+  };
+
   return (
     <div>
       <Container>
@@ -34,7 +39,7 @@ const Order = () => {
             </div>
           </Col>
           <Col md={3}>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart} clearCart={clearCart}></Cart>
           </Col>
         </Row>
       </Container>

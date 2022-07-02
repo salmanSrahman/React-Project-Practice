@@ -39,6 +39,11 @@ const Shop = () => {
     setCart(savedCart);
   }, [products]);
 
+  const clearCart = () => {
+    console.log("Hello");
+    setCart([]);
+  };
+
   return (
     <div>
       <Container>
@@ -57,7 +62,7 @@ const Shop = () => {
             </div>
           </Col>
           <Col md={3}>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart} clearCart={clearCart}></Cart>
           </Col>
         </Row>
       </Container>
