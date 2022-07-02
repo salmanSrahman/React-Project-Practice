@@ -4,10 +4,12 @@ import "./Cart.css";
 const Cart = ({ cart }) => {
   let subPrice = 0;
   let shipping = 0;
+  let quantity = 0;
 
   for (const product of cart) {
-    subPrice = subPrice + product.price;
-    shipping = shipping + product.shipping;
+    quantity = quantity + product.quantity;
+    subPrice = subPrice + product.price * product.quantity;
+    shipping = shipping + product.shipping * product.quantity;
   }
 
   let subTotal = shipping + subPrice;
@@ -17,7 +19,7 @@ const Cart = ({ cart }) => {
   return (
     <div className="cart__container">
       <h2>Order Summary</h2>
-      <h3>Items Ordered:{cart.length}</h3>
+      <h3>Items Ordered:{quantity}</h3>
       <h6>Items: ${subPrice.toFixed(2)}</h6>
       <h6>Shipping & Handing: ${shipping.toFixed(2)}</h6>
       <h6>Total Before Tax: ${subTotal.toFixed(2)}</h6>
