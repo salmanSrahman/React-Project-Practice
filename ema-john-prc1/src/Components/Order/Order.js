@@ -15,9 +15,13 @@ const Order = () => {
       <Container>
         <Row>
           <Col md={9}>
-            {cart.map((product) => (
-              <ReviewItem product={product}></ReviewItem>
-            ))}
+            <div className="d-flex justify-content-center">
+              <div>
+                {cart.map((product) => (
+                  <ReviewItem product={product}></ReviewItem>
+                ))}
+              </div>
+            </div>
           </Col>
           <Col md={3}>
             <Cart cart={cart}></Cart>
