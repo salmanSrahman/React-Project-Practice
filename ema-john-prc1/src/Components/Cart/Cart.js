@@ -7,9 +7,11 @@ const Cart = ({ cart }) => {
   let quantity = 0;
 
   for (const product of cart) {
-    quantity = quantity + product?.quantity;
-    subPrice = subPrice + product?.price * product?.quantity;
-    shipping = shipping + product?.shipping * product?.quantity;
+    if (product) {
+      quantity = quantity + product?.quantity;
+      subPrice = subPrice + product?.price * product?.quantity;
+      shipping = shipping + product?.shipping * product?.quantity;
+    }
   }
 
   let subTotal = shipping + subPrice;
