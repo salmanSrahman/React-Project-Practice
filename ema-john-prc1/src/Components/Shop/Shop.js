@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import { addToDb, getStoredCart } from "../../Utilities/fakeDb";
 import Cart from "../Cart/Cart";
@@ -62,7 +63,11 @@ const Shop = () => {
             </div>
           </Col>
           <Col md={3}>
-            <Cart cart={cart} clearCart={clearCart}></Cart>
+            <Cart cart={cart} clearCart={clearCart}>
+              <Button className="d-block w-100 my-2" variant="success">
+                Review Order
+              </Button>
+            </Cart>
           </Col>
         </Row>
       </Container>

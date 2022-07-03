@@ -7,9 +7,10 @@ import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
 
-const Order = () => {
+const Order = ({ props }) => {
   const [products] = useProducts();
   const [cart, setCart] = useCart(products);
+  console.log(props);
 
   const handleRemoveFromCart = (product) => {
     const rest = cart.filter((pd) => pd.id !== product.id);
