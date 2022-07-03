@@ -17,6 +17,11 @@ const Shop = () => {
     setCart(newCart);
   };
 
+  const removeFromCart = (selectedTshirt) => {
+    const rest = cart.filter((tShirt) => tShirt._id !== selectedTshirt._id);
+    setCart(rest);
+  };
+
   return (
     <div>
       <Container>
@@ -33,7 +38,7 @@ const Shop = () => {
             </Row>
           </Col>
           <Col xl={4} xs={4}>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart} removeFromCart={removeFromCart}></Cart>
           </Col>
         </Row>
       </Container>
