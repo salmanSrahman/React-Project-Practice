@@ -1,0 +1,10 @@
+.tShirt__details {
+      border: 2px solid gray;
+      padding: 5px;
+      border-radius: 5px;
+
+}
+
+.tShirt__details img {
+      height: 300px;
+}

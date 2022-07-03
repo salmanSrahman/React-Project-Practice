@@ -13,15 +13,15 @@ const Shop = () => {
   return (
     <div>
       <Container>
-        <Row>
-          <Col>
-            <Row>
+        <Row className="g-2">
+          <Col md={9}>
+            <Row md={3} className="g-3 py-3">
               {tShirts.map((tShirt) => (
                 <TShirt key={tShirt._id} tShirt={tShirt}></TShirt>
               ))}
             </Row>
           </Col>
-          <Col></Col>
+          <Col md={3}></Col>
         </Row>
       </Container>
     </div>
