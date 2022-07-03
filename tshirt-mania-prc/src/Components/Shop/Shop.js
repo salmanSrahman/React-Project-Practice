@@ -14,14 +14,16 @@ const Shop = () => {
     <div>
       <Container>
         <Row className="g-2">
-          <Col md={9}>
-            <Row md={3} className="g-3 py-3">
+          <Col xl={9} xs={9}>
+            <Row xl={3} xs={1} sm={2} className="g-3 py-3">
               {tShirts.map((tShirt) => (
                 <TShirt key={tShirt._id} tShirt={tShirt}></TShirt>
               ))}
             </Row>
           </Col>
-          <Col md={3}></Col>
+          <Col xl={3} xs={3}>
+            <h1>Cart</h1>
+          </Col>
         </Row>
       </Container>
     </div>
