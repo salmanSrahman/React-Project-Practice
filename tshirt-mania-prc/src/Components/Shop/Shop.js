@@ -10,22 +10,26 @@ import { notify } from "../Toastify/Toastify";
 const Shop = () => {
   const [tShirts, setTShirts] = useState([]);
   const [cart, setCart] = useState([]);
+
+  // product data load
   useEffect(() => {
     fetch("tshirts.json")
       .then((res) => res.json())
       .then((data) => setTShirts(data));
   });
 
+  // selected item add to cart
   const addToCart = (selectedTshirt) => {
     const exist = cart.find((tShirt) => tShirt._id === selectedTshirt._id);
     if (!exist) {
       const newCart = [...cart, selectedTshirt];
       setCart(newCart);
     } else {
-      notify("Already added");
+      notify("This item already added");
     }
   };
 
+  // selected item remove from cart
   const removeFromCart = (selectedTshirt) => {
     const rest = cart.filter((tShirt) => tShirt._id !== selectedTshirt._id);
     setCart(rest);
