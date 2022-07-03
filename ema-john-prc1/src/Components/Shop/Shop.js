@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import { addToDb, getStoredCart } from "../../Utilities/fakeDb";
+import { useNavigate } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
+  const navigate = useNavigate();
+
   const [products] = useProducts();
   const [cart, setCart] = useState([]);
 
@@ -64,7 +66,11 @@ const Shop = () => {
           </Col>
           <Col md={3}>
             <Cart cart={cart} clearCart={clearCart}>
-              <Button className="d-block w-100 my-2" variant="success">
+              <Button
+                className="d-block w-100 my-2"
+                variant="success"
+                onClick={() => navigate("/order")}
+              >
                 Review Order
               </Button>
             </Cart>

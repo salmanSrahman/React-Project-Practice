@@ -7,7 +7,6 @@ const Cart = ({ cart, clearCart, children }) => {
   let subPrice = 0;
   let shipping = 0;
   let quantity = 0;
-  console.log(children);
 
   for (const product of cart) {
     if (product) {
@@ -30,7 +29,7 @@ const Cart = ({ cart, clearCart, children }) => {
       <h6>Total Before Tax: ${subTotal.toFixed(2)}</h6>
       <h6>Estimated Tax: ${tax.toFixed(2)}</h6>
       <h4 className="text-danger">Total Price: {total.toFixed(2)}</h4>
-       {children}
+      {children}
       <Button
         variant="dark"
         className="d-flex justify-content-between align-items-center w-100 d-block"
@@ -42,7 +41,6 @@ const Cart = ({ cart, clearCart, children }) => {
           <RiDeleteBin5Line className="delete__icon" />
         </span>
       </Button>
-     
     </div>
   );
 };
