@@ -1,6 +1,7 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import useCart from "../../Hooks/useCart";
+import { useNavigate } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import { removeFromDb } from "../../Utilities/fakeDb";
 import Cart from "../Cart/Cart";
@@ -8,6 +9,7 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
 
 const Order = ({ props }) => {
+  const navigate = useNavigate();
   const [products] = useProducts();
   const [cart, setCart] = useCart(products);
   console.log(props);
@@ -40,7 +42,15 @@ const Order = ({ props }) => {
             </div>
           </Col>
           <Col md={3}>
-            <Cart cart={cart} clearCart={clearCart}></Cart>
+            <Cart cart={cart} clearCart={clearCart}>
+              <Button
+                className="d-block w-100 my-2"
+                variant="success"
+                onClick={() => navigate("/inventory")}
+              >
+                Proceed Check Out
+              </Button>
+            </Cart>
           </Col>
         </Row>
       </Container>
