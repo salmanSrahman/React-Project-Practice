@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Col } from "react-bootstrap";
 import "./TShirt.css";
 
-const TShirt = ({ tShirt }) => {
+const TShirt = ({ tShirt, addToCart }) => {
   const { name, picture, price } = tShirt;
   return (
     <Col>
@@ -10,7 +10,9 @@ const TShirt = ({ tShirt }) => {
         <img src={picture} className="img-fluid" alt="" />
         <h4>{name}</h4>
         <h4>Price: ${price}</h4>
-        <Button className="d-block w-100" onClick={()=> addToCart(tShirt)}>Add To Cart</Button>
+        <Button className="d-block w-100" onClick={() => addToCart(tShirt)}>
+          Add To Cart
+        </Button>
       </div>
     </Col>
   );
