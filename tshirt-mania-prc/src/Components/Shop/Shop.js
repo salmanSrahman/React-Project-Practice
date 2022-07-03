@@ -3,6 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./Shop.css";
 import TShirt from "../TShirt/TShirt";
 import Cart from "../Cart/Cart";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { notify } from "../Toastify/Toastify";
 
 const Shop = () => {
   const [tShirts, setTShirts] = useState([]);
@@ -12,9 +15,15 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => setTShirts(data));
   });
+
   const addToCart = (selectedTshirt) => {
-    const newCart = [...cart, selectedTshirt];
-    setCart(newCart);
+    const exist = cart.find((tShirt) => tShirt._id === selectedTshirt._id);
+    if (!exist) {
+      const newCart = [...cart, selectedTshirt];
+      setCart(newCart);
+    } else {
+      notify("Already added");
+    }
   };
 
   const removeFromCart = (selectedTshirt) => {
