@@ -6,7 +6,7 @@ import Cart from "../Cart/Cart";
 import "react-toastify/dist/ReactToastify.css";
 import { notify } from "../Toastify/Toastify";
 import Modal from "react-bootstrap/Modal";
-import { BiCheckCircle } from "react-icons/bi";
+import check from "../../images/89540-green-check.gif";
 
 const Shop = () => {
   const [tShirts, setTShirts] = useState([]);
@@ -78,7 +78,8 @@ const Shop = () => {
           className="modal__container"
         >
           <Modal.Body>
-            <BiCheckCircle className="check__mark" />
+            <img src={check} alt="" className="check__mark" />
+            <div className="video__container"></div>
             <h5 className="fs-6 fw-bold">
               Congrats ! Your Order Is Under Check Out.
             </h5>
