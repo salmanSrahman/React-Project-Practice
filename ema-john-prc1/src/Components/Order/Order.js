@@ -3,7 +3,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import useCart from "../../Hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
-import { removeFromDb } from "../../Utilities/fakeDb";
+import { deleteShoppingCart, removeFromDb } from "../../Utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
@@ -21,6 +21,7 @@ const Order = ({ props }) => {
 
   const clearCart = () => {
     setCart([]);
+    deleteShoppingCart();
   };
 
   return (
