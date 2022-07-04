@@ -21,7 +21,7 @@ const Order = ({ props }) => {
 
   const clearCart = () => {
     setCart([]);
-    deleteShoppingCart();
+    deleteShoppingCart()
   };
 
   return (
