@@ -12,7 +12,6 @@ const Order = ({ props }) => {
   const navigate = useNavigate();
   const [products] = useProducts();
   const [cart, setCart] = useCart(products);
-  console.log(props);
 
   const handleRemoveFromCart = (product) => {
     const rest = cart.filter((pd) => pd.id !== product.id);
@@ -21,7 +20,6 @@ const Order = ({ props }) => {
   };
 
   const clearCart = () => {
-    console.log("Hello");
     setCart([]);
   };
 

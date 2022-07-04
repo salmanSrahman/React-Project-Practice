@@ -4,6 +4,7 @@ import "./Cart.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 const Cart = ({ cart, clearCart, children }) => {
+
   let subPrice = 0;
   let shipping = 0;
   let quantity = 0;
