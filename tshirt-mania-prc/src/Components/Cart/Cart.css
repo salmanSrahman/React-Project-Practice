@@ -1,7 +1,13 @@
+.cart__container {
+      position: sticky;
+      top: 0;
+}
+
 .cart__tShirt {
       border: 2px solid red;
       padding: 7px;
       margin: 8px 0;
+
 }
 
 .remove__btn {

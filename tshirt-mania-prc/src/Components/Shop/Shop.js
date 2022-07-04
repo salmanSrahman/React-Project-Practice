@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import "./Shop.css";
 import TShirt from "../TShirt/TShirt";
 import Cart from "../Cart/Cart";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { notify } from "../Toastify/Toastify";
+import Modal from "react-bootstrap/Modal";
+import { BiCheckCircle } from "react-icons/bi";
 
 const Shop = () => {
   const [tShirts, setTShirts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [show, setShow] = useState(false);
+
+  // modal show & close
+  const handleClose = () => {
+    setShow(false);
+    setCart([]);
+  };
+  const handleShow = () => {
+    setShow(true);
+  };
 
   // product data load
   useEffect(() => {
@@ -51,9 +62,33 @@ const Shop = () => {
             </Row>
           </Col>
           <Col xl={4} xs={4}>
-            <Cart cart={cart} removeFromCart={removeFromCart}></Cart>
+            <Cart
+              cart={cart}
+              removeFromCart={removeFromCart}
+              handleShow={handleShow}
+            ></Cart>
           </Col>
         </Row>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+          centered
+          className="modal__container"
+        >
+          <Modal.Body>
+            <BiCheckCircle className="check__mark" />
+            <h5 className="fs-6 fw-bold">
+              Congrats ! Your Order Is Under Check Out.
+            </h5>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="success" onClick={handleClose}>
+              Ok
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Container>
     </div>
   );

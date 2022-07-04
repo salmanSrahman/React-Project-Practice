@@ -3,16 +3,17 @@ import "./Cart.css";
 import { ImCross } from "react-icons/im";
 import { Button } from "react-bootstrap";
 
-const Cart = ({ cart, removeFromCart }) => {
+const Cart = ({ cart, removeFromCart, handleShow }) => {
   return (
-    <div>
+    <div className="cart__container">
       {cart.length > 0 ? (
         <div>
-          <h4>T-Shirt Selected:{cart.length}</h4>
+          <h5>T-Shirt Selected:{cart.length}</h5>
         </div>
       ) : (
         <div>
           <h4>Please Add T- Shirt:</h4>
+          <h5>T-Shirt Selected: {cart.length}</h5>
         </div>
       )}
       <div>
@@ -29,7 +30,11 @@ const Cart = ({ cart, removeFromCart }) => {
           </div>
         ))}
         {cart.length > 0 ? (
-          <Button className="d-block w-100" variant="success">
+          <Button
+            className="d-block w-100"
+            variant="success"
+            onClick={() => handleShow()}
+          >
             Proceed Check Out
           </Button>
         ) : (
