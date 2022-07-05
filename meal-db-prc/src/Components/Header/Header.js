@@ -3,6 +3,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Style from "./Header.module.css";
 import logo from "../../images/logo.png";
+import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
   return (
@@ -19,9 +20,9 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Link to="/home">Home</Link>
-              <Link to="/meals">Meals</Link>
-              <Link to="/contact">Contact</Link>
+              <CustomLink to="/home">Home</CustomLink>
+              <CustomLink to="/meals">Meals</CustomLink>
+              <CustomLink to="/contact">Contact</CustomLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
