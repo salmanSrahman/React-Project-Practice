@@ -12,7 +12,7 @@ const Meals = () => {
   return (
     <div>
       <Container>
-        <Row>
+        <Row xl={5} className="g-3 py-5">
           {meals.map((meal) => (
             <Meal key={meal.idMeal} meal={meal}></Meal>
           ))}
