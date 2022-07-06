@@ -5,11 +5,17 @@ import { useProducts } from "../../Hooks/useProducts";
 import Cart from "../Cart/Cart";
 import Style from "./Order.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { removeFromDb } from "../../utilities/fakeDb";
 
 const Order = () => {
   const [products] = useProducts();
-  const [cart] = useCart(products);
+  const [cart, setCart] = useCart(products);
 
+  const handleRemoveFromCart = (product) => {
+    const rest = cart.filter((prd) => prd.key !== product.key);
+    setCart(rest);
+    removeFromDb(product.key);
+  };
   return (
     <div>
       <Container>
@@ -35,7 +41,7 @@ const Order = () => {
                               <h6>Shipping Charge: ${product.shipping}</h6>
                             </div>
                           </div>
-                          <div>
+                          <div onClick={() => handleRemoveFromCart(product)}>
                             <RiDeleteBin6Line className={Style.delete__btn} />
                           </div>
                         </Col>
