@@ -5,8 +5,7 @@ import { BsCartPlusFill } from "react-icons/bs";
 import Rating from "react-rating";
 
 const Product = ({ product, addToCart }) => {
-  const { name, price, img, seller, star, starCount, stock, features } =
-    product;
+  const { name, price, img, seller, star, starCount, stock } = product;
 
   return (
     <Row className={`${Style.product__details} g-3`}>

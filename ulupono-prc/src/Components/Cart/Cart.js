@@ -2,7 +2,6 @@ import React from "react";
 import Style from "./Cart.module.css";
 
 const Cart = ({ cart }) => {
-  console.log(cart);
   let subTotal = 0;
   let shipping = 0;
   for (const product of cart) {
