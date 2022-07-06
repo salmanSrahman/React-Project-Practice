@@ -1,8 +1,19 @@
-.btn__regular {
+.product__details {
+      border-bottom: 2px solid gray;
+      padding: .8rem;
 
-      background: #165861;
+}
+
+.btn__regular {
+      color: black;
       border: 0;
-      color: #FCCE0D;
-      padding: .4rem 2rem;
+      background: goldenrod;
+      padding: .6rem 2rem;
       border-radius: .5rem;
+      font-weight: bold;
+}
+
+.rating__part {
+      color: goldenrod;
+      font-size: .5rem;
 }

@@ -1,0 +1,5 @@
+.product__container {
+      border-right: 2px solid gray;
+      border-left: 2px solid gray;
+      padding: 1rem 0;
+}
