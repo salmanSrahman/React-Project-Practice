@@ -4,8 +4,7 @@ import Style from "./Product.module.css";
 import { BsCartPlusFill } from "react-icons/bs";
 import Rating from "react-rating";
 
-const Product = ({ product }) => {
-  console.log(product);
+const Product = ({ product, addToCart }) => {
   const { name, price, img, seller, star, starCount, stock, features } =
     product;
 
@@ -21,7 +20,12 @@ const Product = ({ product }) => {
             <div>
               <h6>By:{seller}</h6>
               <h6>Price: {price}</h6>
-              <h6>only {} left in stock - order soon</h6>
+              <h6>
+                only {stock} left in stock -{" "}
+                <span style={{ color: "goldenrod" }} className="fw-bold ">
+                  Order Soon
+                </span>
+              </h6>
               <div>
                 <Rating
                   initialRating={star}
@@ -32,7 +36,10 @@ const Product = ({ product }) => {
                 />
                 <span className="text-secondary"> ({starCount})</span>
               </div>
-              <button className={`${Style.btn__regular} mt-3`}>
+              <button
+                className={`${Style.btn__regular} mt-3`}
+                onClick={() => addToCart(product)}
+              >
                 Add To Cart <BsCartPlusFill className="fs-5" />
               </button>
             </div>
