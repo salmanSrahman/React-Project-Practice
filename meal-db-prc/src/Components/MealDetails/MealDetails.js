@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import {Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Details from "../Details/Details";
 
@@ -12,7 +12,7 @@ const MealDetails = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMealDetails(data.meals));
-  }, []);
+  }, [idMeal]);
 
   return (
     <div>
