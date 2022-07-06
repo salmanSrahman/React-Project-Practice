@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { addToDb } from "../../utilities/fakeDb";
+import { addToDb, getStoredCart } from "../../utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import Style from "./Shop.module.css";
@@ -18,9 +18,18 @@ const Shop = () => {
   const addToCart = (selectedProduct) => {
     const newCart = [...cart, selectedProduct];
     setCart(newCart);
-    console.log(selectedProduct);
     addToDb(selectedProduct.key);
   };
+
+  useEffect(() => {
+    const storedCart = getStoredCart();
+    console.log(storedCart);
+
+    for (const key in storedCart) {
+      const addedProduct = products.find((product) => product.key === key);
+      console.log(addedProduct);
+    }
+  }, [products]);
 
   return (
     <div>
