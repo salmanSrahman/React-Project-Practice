@@ -5,7 +5,7 @@ import { useProducts } from "../../Hooks/useProducts";
 import Cart from "../Cart/Cart";
 import Style from "./Order.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { removeFromDb } from "../../utilities/fakeDb";
+import { deleteShoppingCart, removeFromDb } from "../../utilities/fakeDb";
 
 const Order = () => {
   const [products] = useProducts();
@@ -16,6 +16,14 @@ const Order = () => {
     setCart(rest);
     removeFromDb(product.key);
   };
+
+  // clear shopping cart
+  const clearCart = () => {
+    setCart([]);
+    deleteShoppingCart();
+  };
+
+
   return (
     <div>
       <Container>
@@ -53,7 +61,16 @@ const Order = () => {
             </div>
           </Col>
           <Col xl={3}>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart}>
+              <button
+                className={`${Style.clear__btn} d-flex justify-content-between align-items-center`}
+                onClick={() => clearCart()}
+              >
+                {" "}
+                <span>Clear Cart</span>{" "}
+                <RiDeleteBin6Line className={Style.delete__btn} />
+              </button>
+            </Cart>
           </Col>
         </Row>
       </Container>

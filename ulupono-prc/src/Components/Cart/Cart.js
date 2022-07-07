@@ -1,7 +1,7 @@
 import React from "react";
 import Style from "./Cart.module.css";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, children }) => {
   let subTotal = 0;
   let shipping = 0;
   let quantity = 0;
@@ -25,6 +25,7 @@ const Cart = ({ cart }) => {
       <h5>Shipping & Handling: ${shipping.toFixed(2)}</h5>
       <h5>Total Before Tax: ${totalBeforeTax.toFixed(2)}</h5>
       <h3 className="text-danger">Order Total: ${total.toFixed(2)}</h3>
+      {children}
     </div>
   );
 };

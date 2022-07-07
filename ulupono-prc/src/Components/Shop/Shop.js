@@ -2,10 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useCart } from "../../Hooks/useCart";
 import { useProducts } from "../../Hooks/useProducts";
-import { addToDb } from "../../utilities/fakeDb";
+import { addToDb, deleteShoppingCart } from "../../utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import Style from "./Shop.module.css";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const Shop = () => {
   const [products] = useProducts();
@@ -17,6 +18,12 @@ const Shop = () => {
     const newCart = [...cart, selectedProduct];
     setCart(newCart);
     addToDb(selectedProduct.key);
+  };
+
+// clear shopping cart
+  const clearCart = () => {
+    setCart([]);
+    deleteShoppingCart();
   };
 
   return (
@@ -35,7 +42,16 @@ const Shop = () => {
             </div>
           </Col>
           <Col xl={3}>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart}>
+              <button
+                className={`${Style.clear__btn} d-flex justify-content-between align-items-center`}
+                onClick={() => clearCart()}
+              >
+                {" "}
+                <span>Clear Cart</span>{" "}
+                <RiDeleteBin6Line className={Style.delete__btn} />
+              </button>
+            </Cart>
           </Col>
         </Row>
       </Container>
