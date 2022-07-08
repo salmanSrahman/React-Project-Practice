@@ -5,8 +5,9 @@ import { useProducts } from "../../Hooks/useProducts";
 import Cart from "../Cart/Cart";
 import Style from "./Order.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { removeFromDb } from "../../utilities/fakeDb";
+import { deleteShoppingCart, removeFromDb } from "../../utilities/fakeDb";
 import { useNavigate } from "react-router-dom";
+import { notify } from "../toastify/toastify";
 
 const Order = () => {
   const [products] = useProducts();
@@ -20,9 +21,18 @@ const Order = () => {
 
   const navigate = useNavigate();
   const proceedCheckOut = () => {
-    if (cart.length !== 0) {
+    if (cart.length === 0) {
+      notify()
+     
+    } else {
       navigate("/inventory");
     }
+  };
+
+  // clear shopping cart
+  const clearCart = () => {
+    setCart([]);
+    deleteShoppingCart();
   };
 
   return (
@@ -62,7 +72,7 @@ const Order = () => {
             </div>
           </Col>
           <Col xl={3}>
-            <Cart cart={cart}>
+            <Cart cart={cart} clearCart={clearCart}>
               <Button
                 variant="success"
                 className="w-100 mb-2"

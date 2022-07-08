@@ -29,7 +29,7 @@ const Cart = ({ cart, clearCart, children }) => {
       {children}
       <button
         className={`${Style.clear__btn} d-flex justify-content-between align-items-center`}
-        onClick={() => clearCart()}
+        onClick={clearCart}
       >
         {" "}
         <span>Clear Cart</span>{" "}
