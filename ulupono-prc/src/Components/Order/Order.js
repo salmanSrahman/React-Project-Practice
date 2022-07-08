@@ -1,11 +1,12 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useCart } from "../../Hooks/useCart";
 import { useProducts } from "../../Hooks/useProducts";
 import Cart from "../Cart/Cart";
 import Style from "./Order.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { removeFromDb } from "../../utilities/fakeDb";
+import { useNavigate } from "react-router-dom";
 
 const Order = () => {
   const [products] = useProducts();
@@ -15,6 +16,13 @@ const Order = () => {
     const rest = cart.filter((prd) => prd.key !== product.key);
     setCart(rest);
     removeFromDb(product.key);
+  };
+
+  const navigate = useNavigate();
+  const proceedCheckOut = () => {
+    if (cart.length !== 0) {
+      navigate("/inventory");
+    }
   };
 
   return (
@@ -54,7 +62,15 @@ const Order = () => {
             </div>
           </Col>
           <Col xl={3}>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart}>
+              <Button
+                variant="success"
+                className="w-100 mb-2"
+                onClick={() => proceedCheckOut()}
+              >
+                Proceed Check Out
+              </Button>
+            </Cart>
           </Col>
         </Row>
       </Container>
