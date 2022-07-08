@@ -1,7 +1,8 @@
 import React from "react";
 import Style from "./Cart.module.css";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
-const Cart = ({ cart, children }) => {
+const Cart = ({ cart, clearCart, children }) => {
   let subTotal = 0;
   let shipping = 0;
   let quantity = 0;
@@ -26,6 +27,14 @@ const Cart = ({ cart, children }) => {
       <h5>Total Before Tax: ${totalBeforeTax.toFixed(2)}</h5>
       <h3 className="text-danger">Order Total: ${total.toFixed(2)}</h3>
       {children}
+      <button
+        className={`${Style.clear__btn} d-flex justify-content-between align-items-center`}
+        onClick={() => clearCart()}
+      >
+        {" "}
+        <span>Clear Cart</span>{" "}
+        <RiDeleteBin6Line className={Style.delete__btn} />
+      </button>
     </div>
   );
 };
