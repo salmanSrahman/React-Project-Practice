@@ -31,6 +31,9 @@ const Shop = () => {
   return (
     <div>
       <Container>
+        <div className={Style.search__field}>
+          <input type="text" />
+        </div>
         <Row className="g-3">
           <Col xl={9}>
             <div className={Style.product__container}>
