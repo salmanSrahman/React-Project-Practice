@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../Hooks/useCart";
@@ -9,9 +9,19 @@ import Product from "../Product/Product";
 import Style from "./Shop.module.css";
 
 const Shop = () => {
-  const [products] = useProducts();
+  const [products, setProducts] = useState([]);
+  const [displayProducts, setDisplayProducts] = useState([]);
   const [cart, setCart] = useCart(products);
   // use products & use cart hooks used
+
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+        setDisplayProducts(data);
+      });
+  }, []);
 
   // add to cart
   const addToCart = (selectedProduct) => {
@@ -26,18 +36,27 @@ const Shop = () => {
     deleteShoppingCart();
   };
 
+  const handleSearch = (e) => {
+    console.log(e.target.value);
+    const searchValue = e.target.value;
+    const searchText = products.filter((product) =>
+      product.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setDisplayProducts(searchText);
+  };
+
   const navigate = useNavigate();
 
   return (
     <div>
       <Container>
         <div className={Style.search__field}>
-          <input type="text" />
+          <input type="text" onChange={handleSearch} />
         </div>
         <Row className="g-3">
           <Col xl={9}>
             <div className={Style.product__container}>
-              {products.map((product) => (
+              {displayProducts.map((product) => (
                 <Product
                   key={product.key}
                   product={product}
