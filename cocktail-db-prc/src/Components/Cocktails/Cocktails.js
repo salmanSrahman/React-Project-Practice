@@ -3,7 +3,6 @@ import "./Cocktails.css";
 import { Col, Button } from "react-bootstrap";
 
 const Cocktails = ({ cocktail }) => {
-  console.log(cocktail);
   const { strGlass, strDrinkThumb } = cocktail;
   return (
     <Col>
