@@ -2,14 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Cocktails from "../Cocktails/Cocktails";
+import Cart from "../Cart/Cart";
 
 const Shop = () => {
   const [cocktails, setCocktails] = useState([]);
+  const [seeDetail, setSeeDetail] = useState([]);
   useEffect(() => {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s")
       .then((res) => res.json())
       .then((data) => setCocktails(data.drinks));
   }, []);
+
+  const seeDetails = (cocktail) => {
+    setSeeDetail(cocktail);
+  };
+
   return (
     <div>
       <Container>
@@ -20,11 +27,14 @@ const Shop = () => {
                 <Cocktails
                   key={cocktail.idDrink}
                   cocktail={cocktail}
+                  seeDetails={seeDetails}
                 ></Cocktails>
               ))}
             </Row>
           </Col>
-          <Col xl={3}></Col>
+          <Col xl={3}>
+            <Cart seeDetail={seeDetail}></Cart>
+          </Col>
         </Row>
       </Container>
     </div>
