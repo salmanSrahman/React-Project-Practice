@@ -7,6 +7,8 @@ import Cart from "../Cart/Cart";
 const Shop = () => {
   const [cocktails, setCocktails] = useState([]);
   const [seeDetail, setSeeDetail] = useState([]);
+  const [cart, setCart] = useState([]);
+
   useEffect(() => {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s")
       .then((res) => res.json())
@@ -15,6 +17,11 @@ const Shop = () => {
 
   const seeDetails = (cocktail) => {
     setSeeDetail(cocktail);
+  };
+
+  const addToCart = (selectedCocktail) => {
+    const newCart = [...cart, selectedCocktail];
+    setCart(newCart);
   };
 
   return (
@@ -28,6 +35,7 @@ const Shop = () => {
                   key={cocktail.idDrink}
                   cocktail={cocktail}
                   seeDetails={seeDetails}
+                  addToCart={addToCart}
                 ></Cocktails>
               ))}
             </Row>
