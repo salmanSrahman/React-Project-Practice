@@ -1,5 +1,6 @@
-.nav__container .nav-link {
+.nav__container a {
       color: #fff !important;
       padding: 0 30px !important;
       font-weight: 500;
+      text-decoration: none !important;
 }

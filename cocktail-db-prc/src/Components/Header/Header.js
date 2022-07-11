@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "./Header.css";
 import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -18,10 +19,10 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">About</Nav.Link>
-              <Nav.Link href="#action3">Drinks</Nav.Link>
-              <Nav.Link href="#action4">Contact</Nav.Link>
+              <Link to="/home">Home</Link>
+              <Link to="/home">About</Link>
+              <Link to="/checkout">Check Out</Link>
+              <Link to="/home">Contact</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
