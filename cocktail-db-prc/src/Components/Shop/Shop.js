@@ -3,6 +3,7 @@ import "./Shop.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Cocktails from "../Cocktails/Cocktails";
 import Cart from "../Cart/Cart";
+import { addToDb } from "../../utilities/fakeDb";
 
 const Shop = () => {
   const [cocktails, setCocktails] = useState([]);
@@ -22,6 +23,7 @@ const Shop = () => {
   const addToCart = (selectedCocktail) => {
     const newCart = [...cart, selectedCocktail];
     setCart(newCart);
+    addToDb(selectedCocktail.idDrink);
   };
 
   return (
