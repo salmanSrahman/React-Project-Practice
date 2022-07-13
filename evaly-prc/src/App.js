@@ -1,7 +1,9 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./Components/Header/Header";
 function App() {
   return (
     <div>
-      <h1>Evaly E commerce</h1>
+      <Header />
     </div>
   );
 }
