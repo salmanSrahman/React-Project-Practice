@@ -16,7 +16,7 @@ const Cart = ({ cart }) => {
     <div className="cart__container">
       <h3>Order Summary</h3>
       <h5>Items Ordered: {cart.length}</h5>
-      <h5>beforeTax: ${price.toFixed(2)}</h5>
+      <h5>Before Tax: ${price.toFixed(2)}</h5>
       <h5>Shipping & Handling: ${shipping.toFixed(2)}</h5>
       <h5>Total Before Tax: ${beforeTax.toFixed(2)}</h5>
       <h5>Total Tax: ${tax.toFixed(2)}</h5>

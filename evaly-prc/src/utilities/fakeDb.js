@@ -16,12 +16,12 @@ const addToDb = (id) => {
   }
 
   //   quantity
-  let quantity = storedCart[id];
+  let quantity = shoppingCart[id];
   if (quantity) {
-    const newQuantity = quantity + 1;
-    storedCart[id] = newQuantity;
+    const newQuantity = shoppingCart[id] + 1;
+    shoppingCart[id] = newQuantity;
   } else {
-    quantity = 1;
+    shoppingCart[id] = 1;
   }
   localStorage.setItem("shopping-Cart", JSON.stringify(shoppingCart));
 };
