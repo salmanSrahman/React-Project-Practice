@@ -39,7 +39,15 @@ const Product = ({ product }) => {
             </div>
             <div className="ps-4">
               <h5>Features:</h5>
-              
+              {features.length !== 0 ? (
+                features.map((feature) => (
+                  <li>
+                    {feature.description}:{feature.value}
+                  </li>
+                ))
+              ) : (
+                <li>No Feature Information Is Available.</li>
+              )}
             </div>
           </div>
         </Col>
