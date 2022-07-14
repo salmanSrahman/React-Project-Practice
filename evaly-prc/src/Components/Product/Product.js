@@ -4,8 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import "./Product.css";
 import Rating from "react-rating";
 
-const Product = ({ product }) => {
-  console.log(product.features);
+const Product = ({ addToCart, product }) => {
   const { name, price, img, stock, star, starCount, seller, features } =
     product;
   return (
@@ -35,7 +34,12 @@ const Product = ({ product }) => {
                 />
                 <span className="text-secondary fw-bold">({starCount} )</span>
               </div>
-              <button className="btn__regular">Add To Cart</button>
+              <button
+                className="btn__regular"
+                onClick={() => addToCart(product)}
+              >
+                Add To Cart
+              </button>
             </div>
             <div className="ps-4">
               <h5>Features:</h5>
