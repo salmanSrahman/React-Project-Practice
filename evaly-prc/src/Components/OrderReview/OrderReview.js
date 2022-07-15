@@ -1,12 +1,20 @@
-import React from 'react';
-import './OrderReview.css'
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import "./OrderReview.css";
 
 const OrderReview = () => {
-      return (
-            <div>
-                  
-            </div>
-      );
+  return (
+    <div>
+      <Container>
+        <Row>
+          <Col></Col>
+          <Col>
+           
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 };
 
 export default OrderReview;

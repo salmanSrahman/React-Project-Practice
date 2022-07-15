@@ -16,7 +16,18 @@ const Shop = () => {
   }, []);
 
   const addToCart = (selectedProduct) => {
-    const newCart = [...cart, selectedProduct];
+    const exist = cart.find((product) => product.key === selectedProduct.key);
+    let newCart = [];
+    if (!exist) {
+      selectedProduct.quantity = 1;
+      newCart = [...cart, selectedProduct];
+    } else {
+      const rest = cart.filter(
+        (product) => product.key !== selectedProduct.key
+      );
+      exist.quantity = exist.quantity + 1;
+      newCart = [...rest, exist];
+    }
     setCart(newCart);
     addToDb(selectedProduct.key);
   };
