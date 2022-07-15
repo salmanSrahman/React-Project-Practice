@@ -7,8 +7,13 @@ const Cart = ({ cart }) => {
   let shipping = 0;
   let quantity = 0;
   for (const product of cart) {
+    console.log(product);
+    if (!product.quantity) {
+      product.quantity = 1;
+    }
+    quantity = quantity + product?.quantity;
     price = price + product?.price * product?.quantity;
-    shipping = shipping + product?.shipping;
+    shipping = shipping + product?.shipping * product?.quantity;
   }
   const beforeTax = shipping + price;
   const tax = beforeTax * 0.1;
@@ -17,7 +22,7 @@ const Cart = ({ cart }) => {
   return (
     <div className="cart__container">
       <h3>Order Summary</h3>
-      <h5>Items Ordered: {cart.length}</h5>
+      <h5>Items Ordered: {quantity}</h5>
       <h5>Before Tax: ${price.toFixed(2)}</h5>
       <h5>Shipping & Handling: ${shipping.toFixed(2)}</h5>
       <h5>Total Before Tax: ${beforeTax.toFixed(2)}</h5>
