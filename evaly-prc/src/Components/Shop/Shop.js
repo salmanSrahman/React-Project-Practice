@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { addToDb } from "../../utilities/fakeDb";
+import { addToDb, getsavedCart } from "../../utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -20,6 +20,18 @@ const Shop = () => {
     setCart(newCart);
     addToDb(selectedProduct.key);
   };
+
+  useEffect(() => {
+    const savedCart = getsavedCart();
+    console.log(savedCart);
+    let storedCart = [];
+    for (const key in savedCart) {
+      const addedProduct = products.find((product) => product.key === key);
+      storedCart.push(addedProduct);
+    }
+    setCart(storedCart);
+  }, [products]);
+
   return (
     <div>
       <Container>
