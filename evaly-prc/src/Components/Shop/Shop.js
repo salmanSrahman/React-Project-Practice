@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { addToDb, getsavedCart } from "../../utilities/fakeDb";
+import { addToDb, getStoredCart } from "../../utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -16,20 +16,36 @@ const Shop = () => {
   }, []);
 
   const addToCart = (selectedProduct) => {
-    const newCart = [...cart, selectedProduct];
+    const exist = cart.find((product) => product.key === selectedProduct.key);
+    let newCart = [];
+    if (!exist) {
+      selectedProduct.quantity = 1;
+      newCart = [...cart, selectedProduct];
+    } else {
+      const rest = cart.filter(
+        (product) => product.key !== selectedProduct.key
+      );
+      exist.quantity = exist.quantity + 1;
+      newCart = [...rest, selectedProduct];
+    }
     setCart(newCart);
     addToDb(selectedProduct.key);
   };
 
   useEffect(() => {
-    const savedCart = getsavedCart();
-    console.log(savedCart);
-    let storedCart = [];
-    for (const key in savedCart) {
-      const addedProduct = products.find((product) => product.key === key);
-      storedCart.push(addedProduct);
+    const savedCart = getStoredCart();
+    if (products.length) {
+      let storedCart = [];
+      for (const key in savedCart) {
+        const addedProduct = products.find((product) => product.key === key);
+        if (addedProduct) {
+          const quantity = savedCart[key];
+          addedProduct.quantity = quantity;
+        }
+        storedCart.push(addedProduct);
+      }
+      setCart(storedCart);
     }
-    setCart(storedCart);
   }, [products]);
 
   return (
