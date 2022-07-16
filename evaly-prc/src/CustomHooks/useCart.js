@@ -5,20 +5,20 @@ const useCart = (products) => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    const storedCart = getStoredCart();
     if (products.length) {
-      let savedCart = [];
-      for (const key in storedCart) {
-        const addedProduct = cart.find((product) => product.key === key);
+      const savedCart = getStoredCart();
+      let storedCart = [];
+      for (const key in savedCart) {
+        const addedProduct = products.find((product) => product.key === key);
         if (addedProduct) {
-          const quantity = storedCart[key];
+          const quantity = savedCart[key];
           addedProduct.quantity = quantity;
-          savedCart.push(addedProduct);
+          storedCart.push(addedProduct);
         }
       }
-      setCart(savedCart);
+      setCart(storedCart);
     }
-  }, [products, cart]);
+  }, [products]);
 
   return [cart, setCart];
 };
