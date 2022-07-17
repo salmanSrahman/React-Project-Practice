@@ -14,6 +14,8 @@ const Product = ({ addToCart, product }) => {
           <img src={img} className="img-fluid" alt="" />
         </Col>
         <Col xl={9}>
+        <div>
+        </div>
           <h6>{name}</h6>
           <div className="d-flex py-2">
             <div>

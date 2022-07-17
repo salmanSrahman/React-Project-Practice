@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
 import { addToDb, getStoredCart } from "../../utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
@@ -48,25 +48,36 @@ const Shop = () => {
     addToDb(selectedProduct.key);
   };
 
-  
-
   return (
     <div>
       <Container>
-        <Row className="g-3">
-          <Col xl={9}>
-            {products.map((product) => (
-              <Product
-                key={product.key}
-                addToCart={addToCart}
-                product={product}
-              ></Product>
-            ))}
-          </Col>
-          <Col xl={3}>
-            <Cart cart={cart}></Cart>
-          </Col>
-        </Row>
+        {products.length ? (
+          <Row className="g-3">
+            <Col xl={9}>
+              {products.map((product) => (
+                <Product
+                  key={product.key}
+                  addToCart={addToCart}
+                  product={product}
+                ></Product>
+              ))}
+            </Col>
+            <Col xl={3}>
+              <Cart cart={cart}></Cart>
+            </Col>
+          </Row>
+        ) : (
+          <Button variant="danger" disabled className="d-block mx-auto my-5">
+            <Spinner
+              as="span"
+              animation="grow"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Loading...
+          </Button>
+        )}
       </Container>
     </div>
   );
