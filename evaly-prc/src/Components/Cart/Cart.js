@@ -3,7 +3,7 @@ import "./Cart.css";
 import { Button } from "react-bootstrap";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-const Cart = ({clearCart, cart }) => {
+const Cart = ({clearCart, cart, children }) => {
   let price = 0;
   let shipping = 0;
   let quantity = 0;
@@ -38,6 +38,7 @@ const Cart = ({clearCart, cart }) => {
           <RiDeleteBin5Line className="fs-4" />
         </span>
       </Button>
+      {children}
     </div>
   );
 };

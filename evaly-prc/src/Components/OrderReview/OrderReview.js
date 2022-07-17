@@ -27,43 +27,53 @@ const OrderReview = () => {
         {products.length ? (
           <Row>
             <Col xl={9}>
-              <div className="orderDetails__container">
-                {cart.map((product) => (
-                  <div className="order__details">
-                    <Row className="g-3">
-                      <Col xl={3}>
-                        <img src={product?.img} className="img-fluid" alt="" />
-                      </Col>
-                      <Col
-                        xl={9}
-                        className="d-flex justify-content-between align-items-center"
-                      >
-                        <div>
-                          <h6>{product?.name}</h6>
-                          <h6>
-                            Price:{" "}
-                            <span className="font__color">
-                              ${product?.price}
-                            </span>
-                          </h6>
-                          <h6>
-                            Shipping Charge:{" "}
-                            <span className="font__color">
-                              ${product?.shipping}
-                            </span>
-                          </h6>
-                        </div>
-                        <div>
-                          <RiDeleteBin5Line
-                            className="delete_btn"
-                            onClick={() => removeItem(product.key)}
+              {cart.length ? (
+                <div className="orderDetails__container">
+                  {cart.map((product) => (
+                    <div className="order__details">
+                      <Row className="g-3">
+                        <Col xl={3}>
+                          <img
+                            src={product?.img}
+                            className="img-fluid"
+                            alt=""
                           />
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
-                ))}
-              </div>
+                        </Col>
+                        <Col
+                          xl={9}
+                          className="d-flex justify-content-between align-items-center"
+                        >
+                          <div>
+                            <h6>{product?.name}</h6>
+                            <h6>
+                              Price:{" "}
+                              <span className="font__color">
+                                ${product?.price}
+                              </span>
+                            </h6>
+                            <h6>
+                              Shipping Charge:{" "}
+                              <span className="font__color">
+                                ${product?.shipping}
+                              </span>
+                            </h6>
+                          </div>
+                          <div>
+                            <RiDeleteBin5Line
+                              className="delete_btn"
+                              onClick={() => removeItem(product.key)}
+                            />
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <h5 className="text-danger text-center mt-5 pt-5">
+                  No product added in your cart. Please add some product.
+                </h5>
+              )}
             </Col>
             <Col xl={3}>
               <Cart cart={cart} clearCart={clearCart}></Cart>

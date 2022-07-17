@@ -4,6 +4,8 @@ import { addToDb, clearTheCart, getStoredCart } from "../../utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -53,6 +55,8 @@ const Shop = () => {
     clearTheCart();
   };
 
+  const navigate = useNavigate();
+
   return (
     <div>
       <Container>
@@ -68,7 +72,18 @@ const Shop = () => {
               ))}
             </Col>
             <Col xl={3}>
-              <Cart cart={cart} clearCart={clearCart}></Cart>
+              <Cart cart={cart} clearCart={clearCart}>
+                <Button
+                  variant="secondary"
+                  className="d-block w-100 d-flex justify-content-between my-2"
+                  onClick={() => navigate("/orderReview")}
+                >
+                  <span className="fw-bold">Review Order</span>
+                  <span>
+                    <AiOutlineArrowRight className="fs-4" />
+                  </span>
+                </Button>
+              </Cart>
             </Col>
           </Row>
         ) : (
