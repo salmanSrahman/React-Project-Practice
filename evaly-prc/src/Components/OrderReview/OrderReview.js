@@ -66,7 +66,11 @@ const OrderReview = () => {
             </Col>
           </Row>
         ) : (
-          <Spinner animation="grow" variant="danger" className="mx-auto my-5" />
+          <Spinner
+            animation="grow"
+            variant="danger"
+            className="d-block mx-auto my-5"
+          />
         )}
       </Container>
     </div>
