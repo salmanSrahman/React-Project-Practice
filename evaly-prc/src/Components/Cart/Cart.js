@@ -1,8 +1,9 @@
 import React from "react";
 import "./Cart.css";
+import { Button } from "react-bootstrap";
+import { RiDeleteBin5Line } from "react-icons/ri";
 
-const Cart = ({ cart }) => {
-  
+const Cart = ({clearCart, cart }) => {
   let price = 0;
   let shipping = 0;
   let quantity = 0;
@@ -27,6 +28,16 @@ const Cart = ({ cart }) => {
       <h5>Total Before Tax: ${beforeTax.toFixed(2)}</h5>
       <h5>Total Tax: ${tax.toFixed(2)}</h5>
       <h4 className="text-danger">Order Total: ${totalPrice.toFixed(2)}</h4>
+      <Button
+        variant="danger"
+        className="d-block w-100 d-flex justify-content-between"
+        onClick={()=> clearCart()}
+      >
+        <span className="fw-bold">Clear Cart</span>
+        <span>
+          <RiDeleteBin5Line className="fs-4" />
+        </span>
+      </Button>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import useProducts from "../../CustomHooks/useProducts";
 import Cart from "../Cart/Cart";
 import "./OrderReview.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { removeFromDb } from "../../utilities/fakeDb";
+import { clearTheCart, removeFromDb } from "../../utilities/fakeDb";
 
 const OrderReview = () => {
   const [products] = useProducts();
@@ -15,6 +15,10 @@ const OrderReview = () => {
     const rest = cart.filter((product) => product.key !== key);
     setCart(rest);
     removeFromDb(key);
+  };
+  const clearCart = () => {
+    setCart([]);
+    clearTheCart();
   };
 
   return (
@@ -62,7 +66,7 @@ const OrderReview = () => {
               </div>
             </Col>
             <Col xl={3}>
-              <Cart cart={cart}></Cart>
+              <Cart cart={cart} clearCart={clearCart}></Cart>
             </Col>
           </Row>
         ) : (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
-import { addToDb, getStoredCart } from "../../utilities/fakeDb";
+import { addToDb, clearTheCart, getStoredCart } from "../../utilities/fakeDb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -48,6 +48,11 @@ const Shop = () => {
     addToDb(selectedProduct.key);
   };
 
+  const clearCart = () => {
+    setCart([]);
+    clearTheCart();
+  };
+
   return (
     <div>
       <Container>
@@ -63,7 +68,7 @@ const Shop = () => {
               ))}
             </Col>
             <Col xl={3}>
-              <Cart cart={cart}></Cart>
+              <Cart cart={cart} clearCart={clearCart}></Cart>
             </Col>
           </Row>
         ) : (
