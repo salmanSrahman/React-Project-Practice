@@ -1,0 +1,18 @@
+.order__details {
+      border: 2px solid red;
+      padding: 10px;
+      margin-top: 1rem;
+}
+
+.orderDetails__container {
+      padding: 20px 0;
+}
+
+.delete_btn {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: red;
+      padding: 10px;
+      color: #fff;
+}
