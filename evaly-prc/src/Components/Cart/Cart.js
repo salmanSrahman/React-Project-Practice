@@ -2,6 +2,7 @@ import React from "react";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
+  
   let price = 0;
   let shipping = 0;
   let quantity = 0;

@@ -48,6 +48,8 @@ const Shop = () => {
     addToDb(selectedProduct.key);
   };
 
+  
+
   return (
     <div>
       <Container>
