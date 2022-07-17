@@ -3,13 +3,14 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import CustomLink from "../../Hooks/CustomLink/CustomLink";
 import logo from "../../images/logo.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div>
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand as={Link} to="/shop">
             <img src={logo} alt="" className="w-25 " />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
