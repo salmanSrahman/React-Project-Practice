@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Header from "./Components/Shared/Header/Header";
 
 function App() {
   return (
     <div>
-      <h1>Creative academy project</h1>
+      <Header />
     </div>
   );
 }
