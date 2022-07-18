@@ -1,15 +1,18 @@
 import React from "react";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Spinner, Button } from "react-bootstrap";
 import useCart from "../../CustomHooks/useCart";
 import useProducts from "../../CustomHooks/useProducts";
 import Cart from "../Cart/Cart";
 import "./OrderReview.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { clearTheCart, removeFromDb } from "../../utilities/fakeDb";
+import { useNavigate } from "react-router-dom";
 
 const OrderReview = () => {
   const [products] = useProducts();
   const [cart, setCart] = useCart(products);
+  const navigate = useNavigate();
 
   const removeItem = (key) => {
     const rest = cart.filter((product) => product.key !== key);
@@ -76,7 +79,18 @@ const OrderReview = () => {
               )}
             </Col>
             <Col xl={3}>
-              <Cart cart={cart} clearCart={clearCart}></Cart>
+              <Cart cart={cart} clearCart={clearCart}>
+                <Button
+                  variant="secondary"
+                  className="d-block w-100 d-flex justify-content-between my-2"
+                  onClick={() => navigate("/manageInventory")}
+                >
+                  <span className="fw-bold">Proceed Checkout</span>
+                  <span>
+                    <AiOutlineShoppingCart className="fs-4" />
+                  </span>
+                </Button>
+              </Cart>
             </Col>
           </Row>
         ) : (
