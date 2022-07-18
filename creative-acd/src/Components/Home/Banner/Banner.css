@@ -41,3 +41,7 @@
       opacity: .5;
       transition: opacity .15s ease;
 }
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+      background-color: #BB2D3B;
+}
