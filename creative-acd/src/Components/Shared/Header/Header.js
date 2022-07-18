@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import CustomLink from "../../Hooks/CustomLink";
 import "./Header.css";
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/home">
-            Creative Academy
+            <span className="fw-bold">Creative Academy</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -18,11 +19,11 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Link to="/home">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/services">Services</Link>
-              <Link to="/faq">FAQ</Link>
-              <Link to="/contact">Contact</Link>
+              <CustomLink to="/home">Home</CustomLink>
+              <CustomLink to="/about">About</CustomLink>
+              <CustomLink to="/services">Services</CustomLink>
+              <CustomLink to="/faq">FAQ</CustomLink>
+              <CustomLink to="/contact">Contact</CustomLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
