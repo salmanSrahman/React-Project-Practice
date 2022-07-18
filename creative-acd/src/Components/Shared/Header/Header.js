@@ -15,7 +15,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="ms-auto my-2 my-lg-0"
+              className="ms-auto my-2 my-lg-0 nav__container"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
