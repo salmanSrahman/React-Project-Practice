@@ -81,7 +81,7 @@ const OrderReview = () => {
             <Col xl={3}>
               <Cart cart={cart} clearCart={clearCart}>
                 <Button
-                  variant="secondary"
+                  variant="warning"
                   className="d-block w-100 d-flex justify-content-between my-2"
                   onClick={() => navigate("/manageInventory")}
                 >
