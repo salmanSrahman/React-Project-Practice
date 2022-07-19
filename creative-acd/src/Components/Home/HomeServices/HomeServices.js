@@ -17,7 +17,7 @@ const HomeServices = () => {
             <h2 className="title text-uppercase">Our Best Services</h2>
           </div>
           <Row className="g-3">
-            <Col xl={5}>
+            <Col xl={5} className="d-flex align-items-center">
               <img src={program} className="img-fluid" alt="" />
             </Col>
             <Col xl={7}>
