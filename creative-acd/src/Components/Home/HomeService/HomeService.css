@@ -1,0 +1,19 @@
+.homeService__details {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      border-radius: 5px;
+      padding: .7rem;
+      transition: all linear 0.3s;
+
+}
+
+.homeService__details img {
+      height: 185px;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+      padding: .3rem 0 .6rem;
+}
+
+.homeService__details:hover {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
