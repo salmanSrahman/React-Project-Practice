@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/GsCv425/service-1.png",
+    "title": "App Development",
+    "description": "Brotula California flyingfish bonytail chub redmouth whalefish cookie-cutter shark whitebait zander basking shark! Asiatic",
+    "price": "35000"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/7g3nBJp/service-5.png",
+    "title": "Web Development",
+    "description": "Asiatic glassfish coolie loach sprat pelican gulper, archerfish loosejaw, Blind goby. Southern grayling grunter, orange roughy",
+    "price": "30000"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/CPh138Q/service-3.png",
+    "title": "Research & Analitics",
+    "description": "Southern grayling grunter, orange roughy tench smelt stargazer bottlenose buri, bigeye. Asiatic glassfish coolie loach sprat",
+    "price": "28000"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/NL5L0yY/service-4.png",
+    "title": "UI/UX Development",
+    "description": "Brotula California flyingfish bonytail chub redmouth whalefish cookie-cutter shark whitebait zander basking shark! Asiatic",
+    "price": "25000"
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/b51t5cv/service-2.png",
+    "title": "Web Design",
+    "description": "Asiatic glassfish coolie loach sprat pelican gulper, archerfish loosejaw, Blind goby. Southern grayling grunter, orange roughy",
+    "price": "10000"
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/TTzHhxW/service-6.png",
+    "title": "Machine Learning",
+    "description": "Southern grayling grunter, orange roughy tench smelt stargazer bottlenose buri, bigeye. Asiatic glassfish coolie loach sprat",
+    "price": "28000"
+  },
+  {
+    "id": 7,
+    "img": "https://i.ibb.co/gR3CS36/service-7.png",
+    "title": "Data Science",
+    "description": "Brotula California flyingfish bonytail chub redmouth whalefish cookie-cutter shark whitebait zander basking shark! Asiatic",
+    "price": "25000"
+  },
+  {
+    "id": 8,
+    "img": "https://i.ibb.co/yRSxq5B/service-8.png",
+    "title": "Python Programming",
+    "description": "Asiatic glassfish coolie loach sprat pelican gulper, archerfish loosejaw, Blind goby. Southern grayling grunter, orange roughy",
+    "price": "30000"
+  },
+  {
+    "id": 9,
+    "img": "https://i.ibb.co/7g3nBJp/service-5.png",
+    "title": "PHP Programming",
+    "description": "Southern grayling grunter, orange roughy tench smelt stargazer bottlenose buri, bigeye. Asiatic glassfish coolie loach sprat",
+    "price": "28000"
+  }
+]
