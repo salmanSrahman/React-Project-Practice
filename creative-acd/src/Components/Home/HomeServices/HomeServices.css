@@ -1,0 +1,35 @@
+.title_container {
+      display: inline-block;
+}
+
+.homeService__part {
+      padding: 3rem 0 6rem;
+}
+
+.title {
+      position: relative;
+      margin: 0 auto;
+}
+
+.title:after {
+      content: " ";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #BB2D3B;
+      border-radius: 5px;
+}
+
+.title:before {
+      content: " ";
+      position: absolute;
+      bottom: -2px;
+      left: 54px;
+      width: 21px;
+      height: 3px;
+      background: #BB2D3B;
+      border-radius: 5px;
+
+}
