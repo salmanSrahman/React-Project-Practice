@@ -1,5 +1,6 @@
 .nav__container a {
-      padding: 0 1.2rem;
+      padding: .1rem 1.2rem .2rem;
       font-size: 1.3rem;
       font-weight: 500;
+      text-decoration: none;
 }

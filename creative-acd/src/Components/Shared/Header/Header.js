@@ -10,7 +10,7 @@ const Header = () => {
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/home">
-            <span className="fw-bold fs-4 text-uppercase">
+            <span className="fw-bold fs-4 text-uppercase font__color">
               Creative Academy
             </span>
           </Navbar.Brand>
