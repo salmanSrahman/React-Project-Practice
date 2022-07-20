@@ -10,7 +10,9 @@ const Header = () => {
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/home">
-            <span className="fw-bold fs-2">Creative Academy</span>
+            <span className="fw-bold fs-4 text-uppercase">
+              Creative Academy
+            </span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
