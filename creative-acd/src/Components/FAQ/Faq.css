@@ -1,0 +1,31 @@
+.faq__part {
+      padding: 4rem 0;
+}
+
+.faq__img img {
+      animation: MoveUpDown 5s linear infinite;
+}
+
+
+@keyframes MoveUpDown {
+      0% {
+            transform: rotate(-5deg) translateY(0);
+      }
+
+      30% {
+            transform: rotate(-5deg) translateY(-25px);
+      }
+
+      50% {
+            transform: rotate(-5deg) translateY(0);
+      }
+
+      70% {
+            transform: rotate(-5deg) translateY(30px);
+      }
+
+      100% {
+            transform: rotate(-5deg) translateY(0);
+      }
+
+}
