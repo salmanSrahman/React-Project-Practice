@@ -1,3 +1,11 @@
+.navbar__part {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+
+}
+
 .nav__container a {
       padding: .1rem 1.2rem .2rem;
       font-size: 1.3rem;

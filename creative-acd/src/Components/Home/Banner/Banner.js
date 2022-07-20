@@ -5,8 +5,10 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import slider1 from "../../../images/slider1.png";
 import slider2 from "../../../images/slider2.png";
 import slider3 from "../../../images/slider3.png";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Carousel variant="dark" className="banner__container">
@@ -24,8 +26,12 @@ const Banner = () => {
                     We are a boutique digital transformation consultancy and
                     software development company.
                   </p>
-                  <Button size="lg" variant="danger">
-                    Start Free Trial
+                  <Button
+                    size="lg"
+                    variant="danger"
+                    onClick={() => navigate("/services")}
+                  >
+                    Get Started
                   </Button>
                 </div>
               </Col>
@@ -51,8 +57,12 @@ const Banner = () => {
                     We are a boutique digital transformation consultancy and
                     software development company.
                   </p>
-                  <Button size="lg" variant="danger">
-                    Start Free Trial
+                  <Button
+                    size="lg"
+                    variant="danger"
+                    onClick={() => navigate("/services")}
+                  >
+                    Get Started
                   </Button>
                 </div>
               </Col>
@@ -78,8 +88,12 @@ const Banner = () => {
                     We are a boutique digital transformation consultancy and
                     software development company.
                   </p>
-                  <Button size="lg" variant="danger">
-                    Start Free Trial
+                  <Button
+                    size="lg"
+                    variant="danger"
+                    onClick={() => navigate("/services")}
+                  >
+                    Get Started
                   </Button>
                 </div>
               </Col>

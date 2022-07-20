@@ -2,8 +2,11 @@ import React from "react";
 import "./About.css";
 import about from "../../images/about.png";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="about__part">
       <Container>
@@ -14,8 +17,10 @@ const About = () => {
           <Col>
             <div>
               <h2>
-                <span className="font__color text-uppercase">Creative Academy</span> is one of
-                the Biggest Online Learning Platform of Bangladesh.
+                <span className="font__color text-uppercase">
+                  Creative Academy
+                </span>{" "}
+                is one of the Biggest Online Learning Platform of Bangladesh.
               </h2>
               <p className="text-secondary lh-base fs-5 py-2">
                 Here you can get the best teachers of Bangladesh. You can choose
@@ -25,7 +30,9 @@ const About = () => {
                 favourite teacher's class here. You can take preparation of
                 Admission, HSC, SSC etc.
               </p>
-              <Button variant="danger">Get Started</Button>
+              <Button variant="danger" onClick={() => navigate("/services")}>
+                Get Started
+              </Button>
             </div>
           </Col>
         </Row>

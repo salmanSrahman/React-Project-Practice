@@ -7,7 +7,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" className="navbar__part">
         <Container>
           <Navbar.Brand as={Link} to="/home">
             <span className="fw-bold fs-4 text-uppercase font__color">
