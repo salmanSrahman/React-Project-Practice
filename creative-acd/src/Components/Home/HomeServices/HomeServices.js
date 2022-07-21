@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./HomeServices.css";
 import program from "../../../images/program.gif";
-import useServices from "../../../Hooks/useServices";
 import HomeService from "../HomeService/HomeService";
+import useServices from "../../../Hooks/useServices";
 
 const HomeServices = () => {
   const [services] = useServices();

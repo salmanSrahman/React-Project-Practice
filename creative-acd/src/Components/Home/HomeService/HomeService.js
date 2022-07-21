@@ -17,7 +17,7 @@ const HomeService = ({ service }) => {
           <h5>${price}</h5>
         </div>
         <div className="d-flex justify-content-between">
-          <Link to={`/HomeService/${id}`}>
+          <Link to={`/homeService/${id}`}>
             <Button variant="outline-danger" size="sm">
               See Details
             </Button>
