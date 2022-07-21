@@ -4,6 +4,7 @@
       padding: .7rem;
       transition: all linear 0.3s;
       position: relative;
+      overflow: hidden;
 
 }
 
@@ -34,3 +35,4 @@
 .homeService__details:hover {
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+

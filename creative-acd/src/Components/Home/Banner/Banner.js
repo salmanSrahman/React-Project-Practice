@@ -15,7 +15,7 @@ const Banner = () => {
         <Carousel.Item>
           <Container>
             <Row className="g-3">
-              <Col xl={7} className="d-flex align-items-center">
+              <Col xl={7} xs={7} className="d-flex align-items-center">
                 <div className="banner__text">
                   <h1>
                     Development
@@ -35,7 +35,7 @@ const Banner = () => {
                   </Button>
                 </div>
               </Col>
-              <Col xl={5}>
+              <Col xl={5} xs={5}>
                 <div className="banner__img">
                   <img src={slider1} className="img-fluid" alt="" />
                 </div>
@@ -46,7 +46,7 @@ const Banner = () => {
         <Carousel.Item>
           <Container>
             <Row className="g-3">
-              <Col xl={7} className="d-flex align-items-center">
+              <Col xl={7} xs={7} className="d-flex align-items-center">
                 <div className="banner__text">
                   <h1>
                     Development
@@ -66,7 +66,7 @@ const Banner = () => {
                   </Button>
                 </div>
               </Col>
-              <Col xl={5}>
+              <Col xl={5} xs={5}>
                 <div className="banner__img">
                   <img src={slider2} className="img-fluid" alt="" />
                 </div>
@@ -77,7 +77,7 @@ const Banner = () => {
         <Carousel.Item>
           <Container>
             <Row className="g-3">
-              <Col xl={7} className="d-flex align-items-center">
+              <Col xl={7} xs={7} className="d-flex align-items-center">
                 <div className="banner__text">
                   <h1>
                     Development
@@ -97,7 +97,7 @@ const Banner = () => {
                   </Button>
                 </div>
               </Col>
-              <Col xl={5}>
+              <Col xl={5} xs={5}>
                 <div className="banner__img">
                   <img src={slider3} className="img-fluid" alt="" />
                 </div>

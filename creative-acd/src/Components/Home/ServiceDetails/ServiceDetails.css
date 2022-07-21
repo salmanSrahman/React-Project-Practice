@@ -1,0 +1,49 @@
+.service__details {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      padding: 1rem;
+      position: relative;
+}
+
+.service__details img {
+      height: 300px;
+}
+
+.serviceDetails__overlay1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
+}
+
+.serviceDetails__overlay2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
+}
+
+.serviceDetails__overlay3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
+}
+
+.serviceDetails__overlay4 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
+}
