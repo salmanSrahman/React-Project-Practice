@@ -1,9 +1,10 @@
 import React from "react";
 import { Col, Button } from "react-bootstrap";
 import "./Service.css";
+import {Link} from 'react-router-dom'
 
 const Service = ({ service }) => {
-  const { img, title, price } = service;
+  const { img, title, price, id } = service;
 
   return (
     <Col>
@@ -16,9 +17,11 @@ const Service = ({ service }) => {
           <h5>${price}</h5>
         </div>
         <div className="d-flex justify-content-between">
+        <Link to={`/service/${id}`}>
           <Button variant="outline-danger" size="sm">
             See Details
           </Button>
+          </Link>
           <Button variant="outline-primary" size="sm">
             Enroll Now
           </Button>

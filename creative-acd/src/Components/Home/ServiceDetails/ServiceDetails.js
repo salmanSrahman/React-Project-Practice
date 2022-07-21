@@ -1,22 +1,28 @@
 import React from "react";
 import "./ServiceDetails.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useServices from "../../../Hooks/useServices";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 const ServiceDetails = () => {
   const [services] = useServices();
-  console.log(services);
   const { serviceId } = useParams();
   const selectedService = services.find(
     (service) => service.id === Number(serviceId)
   );
 
+  const navigate = useNavigate();
+
   return (
-    <div>
+    <div className="serviceDetails__part">
       <Container>
+        <div className="title_container d-flex justify-content-center">
+          <h4 className="title text-uppercase">
+            {selectedService?.title} Course Details-
+          </h4>
+        </div>
         <Row>
-          <Col xl={5} className="mx-auto py-5">
+          <Col xl={5} className="mx-auto pt-4">
             <div className="service__details">
               <img
                 src={selectedService?.img}
@@ -29,10 +35,14 @@ const ServiceDetails = () => {
                 <h5>${selectedService?.price}</h5>
               </div>
               <div className="d-flex justify-content-between">
-                <Button variant="outline-danger" size="sm">
-                  See Details
+                <Button
+                  variant="outline-danger"
+                  size="sm"
+                  onClick={() => navigate("/services")}
+                >
+                  All Services
                 </Button>
-                <Button variant="outline-primary" size="sm">
+                <Button variant="outline-primary" size="sm" className="ms-1">
                   Enroll Now
                 </Button>
               </div>

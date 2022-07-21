@@ -19,9 +19,10 @@ function App() {
         <Route path="about" element={<About />}></Route>
         <Route path="services" element={<Services />}></Route>
         <Route
-          path="/homeService/:serviceId"
+          path="/service/:serviceId"
           element={<ServiceDetails />}
         ></Route>
+        <Route path="/service/:serviceId" element={<ServiceDetails />}></Route>
         <Route path="faq" element={<Faq />}></Route>
         <Route path="contact" element={<Contact />}></Route>
       </Routes>
