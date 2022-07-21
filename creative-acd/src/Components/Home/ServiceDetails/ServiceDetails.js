@@ -18,7 +18,7 @@ const ServiceDetails = () => {
       <Container>
         <div className="title_container d-flex justify-content-center">
           <h4 className="title text-uppercase">
-            {selectedService?.title} Course Details-
+            {selectedService?.title} Course Details
           </h4>
         </div>
         <Row>
