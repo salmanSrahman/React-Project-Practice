@@ -1,4 +1,48 @@
+.enroll__part {
+      padding: 5rem 0;
+}
+
 .enroll__container {
       padding: 1rem;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      position: relative;
+}
+.enroll__overlay1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
+}
+
+.enroll__overlay2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
+}
+
+.enroll__overlay3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
+}
+
+.enroll__overlay4 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: #BB2D3B;
+
 }
