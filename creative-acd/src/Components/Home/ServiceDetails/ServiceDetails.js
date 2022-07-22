@@ -1,6 +1,6 @@
 import React from "react";
 import "./ServiceDetails.css";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import useServices from "../../../Hooks/useServices";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
@@ -42,9 +42,11 @@ const ServiceDetails = () => {
                 >
                   All Services
                 </Button>
-                <Button variant="outline-primary" size="sm" className="ms-1">
-                  Enroll Now
-                </Button>
+                <Link to={`/enroll/${selectedService?.id}`}>
+                  <Button variant="outline-primary" size="sm" className="ms-1">
+                    Enroll Now
+                  </Button>
+                </Link>
               </div>
               <div className="serviceDetails__overlay1"></div>
               <div className="serviceDetails__overlay2"></div>
