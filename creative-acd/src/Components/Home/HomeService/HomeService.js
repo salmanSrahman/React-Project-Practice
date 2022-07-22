@@ -22,10 +22,11 @@ const HomeService = ({ service }) => {
               See Details
             </Button>
           </Link>
-
-          <Button variant="outline-primary" size="sm">
-            Enroll Now
-          </Button>
+          <Link to={`/enroll/${id}`}>
+            <Button variant="outline-primary" size="sm">
+              Enroll Now
+            </Button>
+          </Link>
         </div>
       </div>
     </Col>
