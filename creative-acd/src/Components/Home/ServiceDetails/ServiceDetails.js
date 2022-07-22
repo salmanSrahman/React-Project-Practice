@@ -8,7 +8,7 @@ const ServiceDetails = () => {
   const [services] = useServices();
   const { serviceId } = useParams();
   const selectedService = services.find(
-    (service) => service.id === Number(serviceId)
+    (service) => service.title === serviceId
   );
 
   const navigate = useNavigate();

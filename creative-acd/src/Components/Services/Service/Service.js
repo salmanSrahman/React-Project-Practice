@@ -17,7 +17,7 @@ const Service = ({ service }) => {
           <h5>${price}</h5>
         </div>
         <div className="d-flex justify-content-between">
-          <Link to={`/service/${id}`}>
+          <Link to={`/service/${title}`}>
             <Button variant="outline-danger" size="sm">
               See Details
             </Button>
